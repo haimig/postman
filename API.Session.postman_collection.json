@@ -1,0 +1,531 @@
+{
+	"info": {
+		"_postman_id": "60d72afb-28ea-4313-beeb-231334cdd325",
+		"name": "API Session",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Demo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "81a825c1-3472-43e2-9383-835ec5b8b0ee",
+						"exec": [
+							"pm.test(\"Demo test\", function () {",
+							"    pm.expect(5).to.equal(5);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lavanguardia.com",
+					"protocol": "https",
+					"host": [
+						"lavanguardia",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ex1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "da65fc98-0f88-47c0-9c85-7872fe9cee58",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response).to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status code isn't 500\", function () {",
+							"    pm.expect(pm.response).to.not.have.status(500);",
+							"});",
+							"",
+							"",
+							"pm.test(\"'id' exists in the body\", function () {",
+							"    pm.expect(pm.response.text()).to.include('id');",
+							"});",
+							"",
+							"pm.test(\"Response is not null\", function () {",
+							"    pm.expect(pm.response).not.equal(null);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Host",
+						"value": "deezerdevs-deezer.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "X-RapidAPI-Key",
+						"value": "1dcf8684c1msh08faf2e00e9b228p15f705jsne934956b6597",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://deezerdevs-deezer.p.rapidapi.com/artist/1",
+					"protocol": "https",
+					"host": [
+						"deezerdevs-deezer",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"artist",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ex2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "da65fc98-0f88-47c0-9c85-7872fe9cee58",
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							"console.log(pm.response.responseTime + \"ms\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Host",
+						"type": "text",
+						"value": "deezerdevs-deezer.p.rapidapi.com"
+					},
+					{
+						"key": "X-RapidAPI-Key",
+						"type": "text",
+						"value": "1dcf8684c1msh08faf2e00e9b228p15f705jsne934956b6597"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://deezerdevs-deezer.p.rapidapi.com/artist/1",
+					"protocol": "https",
+					"host": [
+						"deezerdevs-deezer",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"artist",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ex3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "da65fc98-0f88-47c0-9c85-7872fe9cee58",
+						"exec": [
+							"pm.test(\"Response is an object\", function () {",
+							"    pm.expect(pm.response).to.be.an('object');",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Host",
+						"type": "text",
+						"value": "deezerdevs-deezer.p.rapidapi.com"
+					},
+					{
+						"key": "X-RapidAPI-Key",
+						"type": "text",
+						"value": "1dcf8684c1msh08faf2e00e9b228p15f705jsne934956b6597"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://deezerdevs-deezer.p.rapidapi.com/artist/1",
+					"protocol": "https",
+					"host": [
+						"deezerdevs-deezer",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"artist",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ex4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "da65fc98-0f88-47c0-9c85-7872fe9cee58",
+						"exec": [
+							"pm.test(\"Content-Type header is present\", function () {\r",
+							"    pm.expect(pm.response).to.have.header(\"Content-Type\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Host",
+						"type": "text",
+						"value": "deezerdevs-deezer.p.rapidapi.com"
+					},
+					{
+						"key": "X-RapidAPI-Key",
+						"type": "text",
+						"value": "1dcf8684c1msh08faf2e00e9b228p15f705jsne934956b6597"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://deezerdevs-deezer.p.rapidapi.com/artist/1",
+					"protocol": "https",
+					"host": [
+						"deezerdevs-deezer",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"artist",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ex5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7464dbb4-bd69-4255-959e-b58a862eb1ab",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Name of the artist is 'The Beatles'\", function () {\r",
+							"    pm.expect(jsonData.name).to.eql(\"The Beatles\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The id is '1'\", function () {\r",
+							"    pm.expect(jsonData.id).to.eql(1);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Host",
+						"type": "text",
+						"value": "deezerdevs-deezer.p.rapidapi.com"
+					},
+					{
+						"key": "X-RapidAPI-Key",
+						"type": "text",
+						"value": "1dcf8684c1msh08faf2e00e9b228p15f705jsne934956b6597"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://deezerdevs-deezer.p.rapidapi.com/artist/1",
+					"protocol": "https",
+					"host": [
+						"deezerdevs-deezer",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"artist",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ex6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "da65fc98-0f88-47c0-9c85-7872fe9cee58",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"var lengthArray = jsonData.tracks.data.length;\r",
+							"\r",
+							"pm.test(\"Array length is 30\", function () {\r",
+							"    pm.expect(lengthArray).to.eql(30);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Host",
+						"type": "text",
+						"value": "deezerdevs-deezer.p.rapidapi.com"
+					},
+					{
+						"key": "X-RapidAPI-Key",
+						"type": "text",
+						"value": "1dcf8684c1msh08faf2e00e9b228p15f705jsne934956b6597"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://deezerdevs-deezer.p.rapidapi.com/album/15801434",
+					"protocol": "https",
+					"host": [
+						"deezerdevs-deezer",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"album",
+						"15801434"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ex7",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "da65fc98-0f88-47c0-9c85-7872fe9cee58",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var flag=false;\r",
+							"var i=0;\r",
+							"\r",
+							"while (i<jsonData.tracks.data.length){\r",
+							"    if ((jsonData.tracks.data[i].title_short) == ('Light My Fire'))\r",
+							"    {\r",
+							"        flag = true;\r",
+							"        break;\r",
+							"    }\r",
+							"    i++;\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Light my fire exists in the album\", function () {\r",
+							"    pm.expect(flag).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Host",
+						"type": "text",
+						"value": "deezerdevs-deezer.p.rapidapi.com"
+					},
+					{
+						"key": "X-RapidAPI-Key",
+						"type": "text",
+						"value": "1dcf8684c1msh08faf2e00e9b228p15f705jsne934956b6597"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://deezerdevs-deezer.p.rapidapi.com/album/15801434",
+					"protocol": "https",
+					"host": [
+						"deezerdevs-deezer",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"album",
+						"15801434"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
